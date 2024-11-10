@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 import './Login.css';
 
 function Login({ isAdminLogin = false }) {
@@ -9,6 +10,8 @@ function Login({ isAdminLogin = false }) {
     role: isAdminLogin ? 'admin' : '', // Default to 'admin' if in admin login mode
     id: '', // Only needed for student/staff login
   });
+
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -20,6 +23,7 @@ function Login({ isAdminLogin = false }) {
 
     const { email, password, role, id } = formData;
 
+    // Basic validations
     if (!email || !/\S+@\S+\.\S+/.test(email)) {
       alert('Please enter a valid email address');
       return;
@@ -46,10 +50,27 @@ function Login({ isAdminLogin = false }) {
 
     try {
       const response = await axios.post('http://localhost:5000/api/auth/login', submissionData);
+      
+      // Store the token in local storage (or session storage as per your preference)
+      localStorage.setItem('token', response.data.token);
+      
       alert('Login successful');
-      // Redirect or other actions
+      console.log(response.data.token);
+      
+
+      // Redirect based on role
+      console.log(response.data.role);
+      
+      if (response.data.role === 'student') {
+        navigate('/student-dashboard');
+      } else if (response.data.role === 'staff') {
+        navigate('/staff-dashboard');
+      } else if (response.data.role === 'admin') {
+        navigate('/admin-dashboard');
+      }
+      
     } catch (error) {
-      alert('Error logging in: ' + (error.response?.data?.message || error.message));
+      alert('Error logging in: ' + (error.response?.data?.msg || error.message));
     }
   };
 
@@ -89,7 +110,7 @@ function Login({ isAdminLogin = false }) {
             <input
               type="text"
               name="id"
-              placeholder={formData.role === 'student' ? 'Student ID' : 'Staff ID'}
+              placeholder={formData.role ? (formData.role === 'student' ? 'Student ID' : 'Staff ID') : 'Enter ID'}
               value={formData.id}
               onChange={handleChange}
               required

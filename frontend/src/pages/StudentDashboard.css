@@ -1,0 +1,43 @@
+.student-dashboard {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .dashboard-header h2 {
+    text-align: center;
+    color: #333;
+  }
+  
+  .student-info, .dashboard-navigation {
+    margin: 20px 0;
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 5px;
+  }
+  
+  .student-info ul, .dashboard-navigation ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .student-info li, .dashboard-navigation li {
+    margin: 10px 0;
+  }
+  
+  .logout-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #d9534f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .logout-button:hover {
+    background-color: #c9302c;
+  }
+  

@@ -27,9 +27,9 @@ function LandingPage() {
         <div className="our-proud-tharkuris">
           <h2>Our Proud Tharkuri's</h2>
           <div className="tharkuri-images">
-            <img src="/aza.jpg" alt="Proud Tharkuri 1" className="tharkuri-img" />
-            <img src="/shai.jpg" alt="Proud Tharkuri 2" className="tharkuri-img" />
-            <img src="/subha.jpg" alt="Proud Tharkuri 3" className="tharkuri-img" />
+            <img src="/azar.jpg" alt="Proud Tharkuri 1" className="tharkuri-img" />
+            <img src="/shaik.jpg" alt="Proud Tharkuri 2" className="tharkuri-img" />
+            <img src="/subhan.jpg" alt="Proud Tharkuri 3" className="tharkuri-img" />
           </div>
         </div>
       </div>

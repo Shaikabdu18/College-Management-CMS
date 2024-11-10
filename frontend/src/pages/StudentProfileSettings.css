@@ -1,0 +1,63 @@
+/* src/pages/StudentProfileSettings.css */
+
+.profile-settings {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+  }
+  
+  .profile-settings h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .profile-settings form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .profile-settings label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555;
+  }
+  
+  .profile-settings input[type="text"],
+  .profile-settings input[type="email"],
+  .profile-settings select {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    width: 100%;
+  }
+  
+  .profile-settings input[disabled] {
+    background-color: #f0f0f0;
+    color: #888;
+  }
+  
+  .profile-settings select {
+    cursor: pointer;
+  }
+  
+  .profile-settings button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .profile-settings button:hover {
+    background-color: #45a049;
+  }
+  

@@ -71,7 +71,7 @@ export const loginUser = async (req, res, next) => {
       { expiresIn: "50d" }
     );
 
-    return res.status(200).json({ token });
+    return res.status(200).json({ token ,role: userExists.role});
 
   } catch (error) {
     next(error);
